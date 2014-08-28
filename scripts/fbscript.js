@@ -80,24 +80,28 @@ function testAPI() {
   FB.api('/me', function(response) {
     console.log('Successful login for: ' + response.name);
     document.getElementById('status').innerHTML =
-      'Thanks for logging in, ' + response.name + '!';
-      bdaylist = $("div#bday-list");
-      bdaylist.empty();
-      ul = $('<div class="list-group-justified"/>');
-      li = $('<a href="#" class="list-group-item"/>');
-      li.append('<span class="glyphicon glyphicon-file"></span> ' + response.birthday + 
-        ' <span class="glyphicon glyphicon-chevron-right"></span> <span class="badge badge-primary">' + 
-        Math.floor((Math.random()*20 + 1)) + '</span>');
-      ul.append(li);
-      bdaylist.append(ul);
-
-      bdaylist.show();
-       
-
+      '- Thanks for logging in, ' + response.name + '!';
   });
 }
 
 //Retrieve all friend's names and list it in the div 
 function listFriends(data) {
   console.log("listFriends: ", data);
+  _ref = data.data;
+
+  //#TODO insert sorting logic
+  bdaylist = $("div#bday-list");
+  bdaylist.empty();
+  ul = $('<div class="list-group-justified"/>');
+  for (var i = _ref.length - 1; i >= 0; i--) {
+    friend = _ref[i];
+    li = $('<a href="#" class="list-group-item"/>');
+    li.append('<span class="glyphicon glyphicon-gift"></span> ' + friend.name + 
+      ' <span class="glyphicon glyphicon-chevron-right"></span> <span class="badge badge-primary">' + 
+      Math.floor((Math.random()*20 + 1)) + '</span>');
+    ul.append(li);
+  };
+  bdaylist.append(ul);
+  bdaylist.show();
+  appendError("- Added data for " + _ref.length + " friends");
 }
