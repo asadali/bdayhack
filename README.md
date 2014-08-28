@@ -2,7 +2,9 @@ STATUS
 ======
 - can retrieve FB friend list of logged in user
 - retrieving birthdays is a different deal
+
 >Where do we go from here?
+
 
 RANTS
 =====
