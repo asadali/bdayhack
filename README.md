@@ -2,7 +2,16 @@ STATUS
 ======
 - can retrieve FB friend list of logged in user
 - retrieving birthdays is a different deal
->Where do we go from here?
+- gave KT to Manish :P
+
+>[Where do we go from here?] (https://www.youtube.com/watch?v=O9C0D1RGn2g)
+
+INSTALLATION
+============
+- clone repository
+- use ```"python -m simpleHTTPServer"``` to view demo
+- login using the FB button
+- _may have to refresh to see results #bug_
 
 RANTS
 =====
